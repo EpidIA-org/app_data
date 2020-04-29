@@ -2,16 +2,16 @@ import os
 import logging
 import azure.functions as func
 from datetime import datetime
-from _libs import AzureBlobConnector
+from _libs import AzureBlobConnector, WeeklyInseeDeathFigureProcessor
 
-PROCESSORS_TO_RUN = []
+PROCESSORS_TO_RUN = [WeeklyInseeDeathFigureProcessor]
 
 
 def main(req: func.HttpRequest) -> func.HttpResponse:
     start_time = datetime.now()
     logging.basicConfig(level=logging.INFO)
     # Instantiate Logger
-    logger = logging.getLogger("PROCESS DAILY")
+    logger = logging.getLogger("PROCESS WEEKLY")
     handler = logging.StreamHandler()
     handler.setLevel(logging.INFO)
     formatter = logging.Formatter(

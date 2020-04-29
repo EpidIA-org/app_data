@@ -2,9 +2,9 @@ import os
 import logging
 import azure.functions as func
 from datetime import datetime
-from _libs import AzureBlobConnector, DailyCovidFiguresProcessor
+from _libs import AzureBlobConnector, DailyCovidFiguresProcessor, DailyEhpadFiguresProcessor
 
-PROCESSORS_TO_RUN = [DailyCovidFiguresProcessor]
+PROCESSORS_TO_RUN = [DailyCovidFiguresProcessor, DailyEhpadFiguresProcessor]
 
 
 def main(req: func.HttpRequest) -> func.HttpResponse:
