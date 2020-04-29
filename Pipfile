@@ -1,0 +1,23 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+pylint = "*"
+black = "*"
+ipython = "*"
+flake8 = "*"
+
+[packages]
+azure-storage-blob = "*"
+pandas = "*"
+beautifulsoup4 = "*"
+azure-core = "*"
+azure-functions = "*"
+
+[requires]
+python_version = "3.7"
+
+[pipenv]
+allow_prereleases = true

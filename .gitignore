@@ -1,0 +1,8 @@
+
+*.ignore.*
+.DS_Store
+.vscode
+*.csv
+*.pyc
+*.geojson
+.env
