@@ -79,3 +79,26 @@ class DataGouvScrapper(Scrapper):
             for i, href in enumerate(links)
             if href is not None
         ]
+
+
+class DataGouvSOSMedecinScrapper(DataGouvScrapper):
+
+    def __init__(self):
+        super(DataGouvScrapper, self).__init__()
+
+    _SCRAPPER_NAME = "DataGouvSOSMedecinScrapper"
+    URL = "https://www.data.gouv.fr/en/datasets/donnees-hospitalieres-relatives-a-lepidemie-de-covid-19/"
+
+    def _fetch(self):
+        self._fetch_datagouv_files()
+
+class DataGouvTestCovidScrapper(DataGouvScrapper):
+
+    def __init__(self):
+        super(DataGouvScrapper, self).__init__()
+
+    _SCRAPPER_NAME = "DataGouvTestCovidScrapper"
+    URL = "https://www.data.gouv.fr/fr/datasets/donnees-relatives-aux-tests-de-depistage-de-covid-19-realises-en-laboratoire-de-ville/"
+
+    def _fetch(self):
+        self._fetch_datagouv_files()

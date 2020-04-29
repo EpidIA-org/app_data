@@ -19,7 +19,7 @@ class Scrapper:
         return self.fetch().write()
 
     def _get_logger(self):
-        self._logger = logging.getLogger(self.URL)
+        self._logger = logging.getLogger(self._SCRAPPER_NAME)
         self._handler = logging.StreamHandler()
         self._handler.setLevel(logging.INFO)
         self._formatter = logging.Formatter(

@@ -2,9 +2,9 @@ import os
 import logging
 import azure.functions as func
 from datetime import datetime
-from _libs import AzureBlobConnector, DataGouvScrapper
+from _libs import AzureBlobConnector, DataGouvScrapper, DataGouvSOSMedecinScrapper, DataGouvTestCovidScrapper
 
-SCRAPPERS_TO_RUN = [DataGouvScrapper]
+SCRAPPERS_TO_RUN = [DataGouvScrapper, DataGouvSOSMedecinScrapper, DataGouvTestCovidScrapper]
 
 
 def main(req: func.HttpRequest) -> func.HttpResponse:
