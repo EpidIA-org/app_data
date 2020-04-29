@@ -7,7 +7,7 @@ from _libs import AzureBlobConnector, DataGouvScrapper, DataGouvSOSMedecinScrapp
 SCRAPPERS_TO_RUN = [DataGouvScrapper, DataGouvSOSMedecinScrapper, DataGouvTestCovidScrapper]
 
 
-def main(req: func.HttpRequest) -> func.HttpResponse:
+def main(timer: func.TimerRequest) -> None:
     start_time = datetime.now()
     logging.basicConfig(level=logging.INFO)
     # Instantiate Logger
@@ -37,5 +37,3 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
     # Feed Storage
     logger.info("Scraping Data")
     scrappers = [scrapper.write(abc) for scrapper in scrappers]
-
-    return func.HttpResponse(f"Process finished. {datetime.now() - start_time}")
