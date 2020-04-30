@@ -2,7 +2,7 @@ import os
 import logging
 import azure.functions as func
 from datetime import datetime
-from _libs import AzureBlobConnector, InseeScrapper
+from ._libs import AzureBlobConnector, InseeScrapper
 
 SCRAPPERS_TO_RUN = [InseeScrapper]
 

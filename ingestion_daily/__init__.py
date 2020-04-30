@@ -2,7 +2,7 @@ import os
 import logging
 import azure.functions as func
 from datetime import datetime
-from _libs import AzureBlobConnector, DataGouvScrapper, DataGouvSOSMedecinScrapper, DataGouvTestCovidScrapper
+from ._libs import AzureBlobConnector, DataGouvScrapper, DataGouvSOSMedecinScrapper, DataGouvTestCovidScrapper
 
 SCRAPPERS_TO_RUN = [DataGouvScrapper, DataGouvSOSMedecinScrapper, DataGouvTestCovidScrapper]
 

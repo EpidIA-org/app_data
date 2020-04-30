@@ -2,7 +2,7 @@ import os
 import logging
 import azure.functions as func
 from datetime import datetime
-from _libs import AzureBlobConnector, WeeklyInseeDeathFigureProcessor
+from ._libs import AzureBlobConnector, WeeklyInseeDeathFigureProcessor
 
 PROCESSORS_TO_RUN = [WeeklyInseeDeathFigureProcessor]
 
