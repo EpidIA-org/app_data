@@ -1,16 +1,20 @@
 {
-  "scriptFile": "__init__.py",
-  "bindings": [
-      {
-          "type": "http",
-          "direction": "out",
-          "name": "$return"
-      },
-      {
-        "name": "timer",
-        "type": "timerTrigger",
-        "direction": "in",
-        "schedule": "0 0 */1 * * *"
-    }
-  ]
+    "scriptFile": "__init__.py",
+    "bindings": [
+        {
+            "type": "http",
+            "direction": "out",
+            "name": "$return"
+        },
+        {
+            "authLevel": "anonymous",
+            "type": "httpTrigger",
+            "direction": "in",
+            "name": "req",
+            "methods": [
+                "get",
+                "post"
+            ]
+        }
+    ]
 }

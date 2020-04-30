@@ -2,12 +2,14 @@ import os
 import logging
 import azure.functions as func
 from datetime import datetime
+from urllib.request import urlopen
 from ._libs import AzureBlobConnector, DataGouvScrapper, DataGouvSOSMedecinScrapper, DataGouvTestCovidScrapper
+
 
 SCRAPPERS_TO_RUN = [DataGouvScrapper, DataGouvSOSMedecinScrapper, DataGouvTestCovidScrapper]
 
 
-def main(timer: func.TimerRequest) -> func.HttpResponse:
+def main(req: func.HttpRequest) -> func.HttpResponse:
     start_time = datetime.now()
     logging.basicConfig(level=logging.INFO)
     # Instantiate Logger
@@ -37,5 +39,7 @@ def main(timer: func.TimerRequest) -> func.HttpResponse:
     # Feed Storage
     logger.info("Scraping Data")
     scrappers = [scrapper.write(abc) for scrapper in scrappers]
+
+    resp = urlopen('https://covid-ia-fileoperations.azurewebsites.net/api/processing_daily')
 
     return func.HttpResponse(f"Process finished. {datetime.now() - start_time}")
