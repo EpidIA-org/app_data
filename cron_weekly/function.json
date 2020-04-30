@@ -1,0 +1,16 @@
+{
+  "scriptFile": "__init__.py",
+  "bindings": [
+      {
+          "type": "http",
+          "direction": "out",
+          "name": "$return"
+      },
+      {
+        "name": "timer",
+        "type": "timerTrigger",
+        "direction": "in",
+        "schedule": "0 0 1 * * 6"
+    }
+  ]
+}
