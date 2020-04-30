@@ -1,7 +1,7 @@
 import logging
 from bs4 import BeautifulSoup
 from urllib.request import urlopen
-from _libs.azure_blob_connector import AzureBlobConnector
+from .azure_blob_connector import AzureBlobConnector
 
 
 class Scrapper:

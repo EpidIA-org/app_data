@@ -1,5 +1,5 @@
 from urllib.request import urlopen
-from _libs.scrapper import Scrapper
+from .scrapper import Scrapper
 
 
 class DataGouvScrapper(Scrapper):

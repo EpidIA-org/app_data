@@ -2,7 +2,7 @@ import os
 import logging
 import azure.functions as func
 from datetime import datetime
-from _libs import AzureBlobConnector, DailyCovidFiguresProcessor, DailyEhpadFiguresProcessor
+from ._libs import AzureBlobConnector, DailyCovidFiguresProcessor, DailyEhpadFiguresProcessor
 
 PROCESSORS_TO_RUN = [DailyCovidFiguresProcessor, DailyEhpadFiguresProcessor]
 

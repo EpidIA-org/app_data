@@ -2,7 +2,7 @@ import os
 import pandas as pd
 from io import BytesIO
 from azure.storage.blob import BlobServiceClient, BlobClient, ContainerClient
-from _libs.storage_connector import StorageConnector
+from .storage_connector import StorageConnector
 
 
 class AzureBlobConnector(StorageConnector):

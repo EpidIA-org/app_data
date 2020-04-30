@@ -1,6 +1,6 @@
 import logging
 import re
-from _libs.azure_blob_connector import AzureBlobConnector
+from .azure_blob_connector import AzureBlobConnector
 
 
 class Processor:

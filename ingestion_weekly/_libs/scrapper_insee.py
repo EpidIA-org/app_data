@@ -1,4 +1,4 @@
-from _libs.scrapper import Scrapper
+from .scrapper import Scrapper
 from urllib.parse import urlsplit
 from urllib.request import urlopen
 

@@ -2,8 +2,8 @@ import re
 import pandas as pd
 from zipfile import ZipFile
 from io import BytesIO, StringIO
-from _libs.processor import Processor
-from _libs.azure_blob_connector import AzureBlobConnector
+from .processor import Processor
+from .azure_blob_connector import AzureBlobConnector
 
 
 class WeeklyInseeDeathFigureProcessor(Processor):

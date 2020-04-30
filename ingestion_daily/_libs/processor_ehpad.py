@@ -1,4 +1,4 @@
-from _libs.processor import Processor
+from .processor import Processor
 
 
 class DailyEhpadFiguresProcessor(Processor):
