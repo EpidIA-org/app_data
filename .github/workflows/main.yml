@@ -14,6 +14,7 @@ on:
 # 2. Change these variables for your configuration:
 env:
   AZURE_FUNCTIONAPP_NAME: "covid-ia-fileoperations" # set this to your application's name
+  AZURE_FUNCTIONAPP_PACKAGE_PATH: '.'         # set this to the path to your web app project, defaults to the repository root
   PYTHON_VERSION: '3.7'                 # set this to the python version to use (supports 3.6, 3.7, 3.8)
 
 jobs:
@@ -42,5 +43,6 @@ jobs:
       with:
         app-name: ${{ env.AZURE_FUNCTIONAPP_NAME }}
         publish-profile: ${{ secrets.AZURE_FUNCTIONAPP_PUBLISH_PROFILE }}
+        package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
 
 # For more samples to get started with GitHub Action workflows to deploy to Azure, refer to https://github.com/Azure/actions-workflow-samples
