@@ -40,6 +40,7 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
     logger.info("Scraping Data")
     scrappers = [scrapper.write(abc) for scrapper in scrappers]
 
-    resp = urlopen('https://covid-ia-fileoperations.azurewebsites.net/api/processing_daily')
+    with urlopen('https://epidia-ingestion-functions.azurewebsites.net/api/processing_daily') as _:
+        _ = True
 
     return func.HttpResponse(f"Process finished. {datetime.now() - start_time}")
