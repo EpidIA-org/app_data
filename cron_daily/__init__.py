@@ -6,7 +6,7 @@ import requests
 def main(timer: func.TimerRequest) -> None:
     logging.basicConfig(level=logging.INFO)
     # Instantiate Logger
-    logger = logging.getLogger("INGESTION DAILY")
+    logger = logging.getLogger("azure")
     handler = logging.StreamHandler()
     handler.setLevel(logging.INFO)
     formatter = logging.Formatter(

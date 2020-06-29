@@ -3,6 +3,7 @@ import logging
 import azure.functions as func
 from datetime import datetime
 from urllib.request import urlopen
+import requests
 from ._libs import AzureBlobConnector, DataGouvScrapper, DataGouvSOSMedecinScrapper, DataGouvTestCovidScrapper
 
 
@@ -13,7 +14,7 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
     start_time = datetime.now()
     logging.basicConfig(level=logging.INFO)
     # Instantiate Logger
-    logger = logging.getLogger("INGESTION DAILY")
+    logger = logging.getLogger("azure")
     handler = logging.StreamHandler()
     handler.setLevel(logging.INFO)
     formatter = logging.Formatter(
@@ -40,7 +41,6 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
     logger.info("Scraping Data")
     scrappers = [scrapper.write(abc) for scrapper in scrappers]
 
-    with urlopen('https://epidia-ingestion-functions.azurewebsites.net/api/processing_daily') as _:
-        _ = True
+    r = requests.get('https://epidia-ingestion-functions.azurewebsites.net/api/processing_daily')
 
     return func.HttpResponse(f"Process finished. {datetime.now() - start_time}")
