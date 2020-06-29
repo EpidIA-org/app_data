@@ -15,6 +15,7 @@ pandas = "*"
 beautifulsoup4 = "*"
 azure-core = "*"
 azure-functions = "*"
+requests = "*"
 
 [requires]
 python_version = "3.7"
