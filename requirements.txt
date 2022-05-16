@@ -10,7 +10,7 @@ cryptography==2.9.2
 idna==2.10
 isodate==0.6.0
 msrest==0.6.17
-numpy==1.19.0
+numpy==1.21.0
 oauthlib==3.1.0
 pandas==1.0.5
 pycparser==2.20
